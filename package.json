@@ -7,6 +7,7 @@
     "client": "cd client && npm start",
     "server": "cross-env NODE_ENV=development nodemon index.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "build:ui": "rm -rf build && cd ../blog-app && npm run build --prod && cp -r build ../blog-app-api",
     "lint": "eslint .",
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
     "start:test": "cross-env NODE_ENV=test node index.js"
