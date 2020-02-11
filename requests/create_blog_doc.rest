@@ -1,0 +1,10 @@
+POST http://localhost:3002/api/blogs HTTP/1.1
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RlcjUiLCJpZCI6IjVkZmFiMGJmNjJlYWQyMTA0YjhlYjgxMiIsImlhdCI6MTU3NjcxMDMzOX0.qB_QLSVeykABsogajlQEptj4BoHWKc9Lp9wvxdzUih4
+
+{
+  "title": "will this delete",
+  "author": "Five",
+  "url": "5isfive",
+  "likes": "1"
+}
