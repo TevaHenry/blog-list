@@ -1,4 +1,5 @@
 const config = require('./utils/config')
+const path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
@@ -29,6 +30,14 @@ app.use(express.static('build'))
 app.use('/api/blogs', blogsRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)
+
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, 'build/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
 
 if (process.env.NODE_ENV === 'test') {
   const testingRouter = require('./controllers/testing')
